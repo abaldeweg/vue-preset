@@ -1,0 +1,56 @@
+{
+  "useConfigFiles": true,
+  "plugins": {
+    "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-pwa": {},
+    "@vue/cli-plugin-router": {
+      "historyMode": true
+    },
+    "@vue/cli-plugin-vuex": {},
+    "@vue/cli-plugin-eslint": {
+      "config": "prettier",
+      "lintOn": [
+        "save"
+      ]
+    },
+    "@vue/cli-plugin-unit-jest": {},
+    "vue-cli-plugin-i18n": {
+      "locale": "en-US",
+      "fallbackLocale": "en-US",
+      "localeDir": "locales",
+      "enableInSFC": false
+    }
+  },
+  "configs": {
+    "vue": {
+      "devServer": {
+        "open": true
+      },
+      "pwa": {
+        "workboxOptions": {
+          "importWorkboxFrom": "local"
+        },
+        "name": "test",
+        "themeColor": "#ff0000"
+      }
+    },
+    "eslintConfig": {
+      "rules": {
+        "prettier/prettier": [
+          "error",
+          {
+            "singleQuote": true,
+            "semi": false
+          }
+        ]
+      }
+    },
+    "browserslist": [
+      "last 2 chrome versions",
+      "last 2 and_chr versions",
+      "last 2 firefox versions",
+      "last 2 and_ff versions"
+    ]
+  },
+  "vueVersion": "2"
+}
