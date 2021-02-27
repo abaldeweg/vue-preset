@@ -74,11 +74,11 @@ export default {
           password: data.password
         })
         .then(function(response) {
-          Cookies.set('token', response.data.token, { expires: 7, secure: true })
+          Cookies.set('token', response.data.token, { expires: 7, secure: process.env.NODE_ENV === 'production' })
           context.commit('token', response.data.token)
           Cookies.set('refresh_token', response.data.refresh_token, {
             expires: 30,
-            secure: true
+            secure: process.env.NODE_ENV === 'production'
           })
           context.commit('refreshToken', response.data.refresh_token)
           context.commit('isAuthenticated', true)
@@ -97,11 +97,11 @@ export default {
           refresh_token: context.state.refreshToken
         })
         .then(function(response) {
-          Cookies.set('token', response.data.token, { expires: 7, secure: true })
+          Cookies.set('token', response.data.token, { expires: 7, secure: process.env.NODE_ENV === 'production' })
           context.commit('token', response.data.token)
           Cookies.set('refresh_token', response.data.refresh_token, {
             expires: 30,
-            secure: true
+            secure: process.env.NODE_ENV === 'production'
           })
           context.commit('refreshToken', response.data.refresh_token)
           context.commit('isAuthenticated', true)
