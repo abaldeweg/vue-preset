@@ -1,0 +1,13 @@
+{
+    "name": "baldeweg/vue-preset",
+    "description": "Preset for baldeweg/components and VueJS.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André Baldeweg",
+            "email": "a@baldeweg.org"
+        }
+    ],
+    "require": {}
+}
