@@ -53,7 +53,7 @@ export default {
     ...mapState('user', ['me', 'isAuthenticated']),
   },
   methods: {
-    ...mapMutations('showOffCanvas'),
+    ...mapMutations(['showOffCanvas']),
     ...mapActions('user', ['logout']),
     profile: function () {
       this.$router.push({ name: 'profile' })
