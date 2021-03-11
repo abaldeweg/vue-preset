@@ -24,6 +24,8 @@ module.exports = (api, options) => {
   api.injectImports(api.entryFile, `import components from './components'`)
   api.injectRootOptions(api.entryFile, `components,`)
 
+  api.injectImports(api.entryFile, `import './theme.css'`)
+
   api.exitLog('Add missing details to `vue.config.js`.', 'info')
   api.exitLog('Make `bin/setup` executable.', 'info')
   api.exitLog('Initialize a new git repo. Review and commit the files.', 'info')

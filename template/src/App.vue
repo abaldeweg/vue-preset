@@ -56,11 +56,3 @@ export default {
   },
 }
 </script>
-
-<style>
-html {
-  --color-primary-10: #d7621d;
-  --color-primary-05: #e9915d;
-  --color-primary-00: #f3c2a5;
-}
-</style>
