@@ -5,13 +5,13 @@
   "hello": "Hello",
   "username": "Username",
   "password": "Password",
-  "change_password": "Change Password",
+  "changePassword": "Change Password",
   "login": "Login",
   "logout": "Logout",
   "themes": "Themes",
   "language": "Language",
-  "not_found": "Not Found",
-  "not_found_desc": "The requested page could not be found.",
-  "go_to_homepage": "Go to homepage",
+  "notFound": "Not Found",
+  "notFoundDesc": "The requested page could not be found.",
+  "goToHomepage": "Go to homepage",
   "save": "Save"
 }

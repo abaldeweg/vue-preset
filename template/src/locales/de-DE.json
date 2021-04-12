@@ -5,13 +5,13 @@
   "hello": "Hallo",
   "username": "Nutzername",
   "password": "Passwort",
-  "change_password": "Passwort ändern",
+  "changePassword": "Passwort ändern",
   "login": "Login",
   "logout": "Logout",
   "themes": "Themes",
   "language": "Sprache",
-  "not_found": "Seite nicht gefunden",
-  "not_found_desc": "Die gesuchte Seite konnte leider nicht gefunden werden.",
-  "go_to_homepage": "Zur Startseite",
+  "notFound": "Seite nicht gefunden",
+  "notFoundDesc": "Die gesuchte Seite konnte leider nicht gefunden werden.",
+  "goToHomepage": "Zur Startseite",
   "save": "Speichern"
 }

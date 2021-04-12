@@ -1,6 +1,6 @@
 <template>
   <details>
-    <summary>{{ $t('change_password') }}</summary>
+    <summary>{{ $t('changePassword') }}</summary>
 
     <b-form @submit.prevent="changePassword">
       <b-form-group>
