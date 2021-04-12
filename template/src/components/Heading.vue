@@ -29,8 +29,8 @@
             <b-icon type="profile" />
           </span>
         </template>
-        <b-dropdown-item v-if="me">
-          {{ $t('hello') }}, {{ me.username }}!
+        <b-dropdown-item no-hover v-if="state.me">
+          {{ $t('hello') }}, {{ state.me.username }}!
         </b-dropdown-item>
         <b-dropdown-divider />
         <b-dropdown-item @click.prevent="profile">
@@ -45,17 +45,32 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from 'vuex'
+import useAuth from '@/composables/useAuth'
+import { toRefs, watch } from '@vue/composition-api'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'heading',
-  computed: {
-    ...mapState('user', ['me', 'isAuthenticated']),
+  props: {
+    isAuthenticated: Boolean,
+  },
+  setup(props, { emit }) {
+    const { getUser, state, logout } = useAuth(emit)
+    const { isAuthenticated } = toRefs(props)
+
+    if (props.isAuthenticated) {
+      getUser()
+    }
+
+    watch(isAuthenticated, () => {
+      getUser()
+    })
+
+    return { state, logout }
   },
   methods: {
     ...mapMutations(['showOffCanvas']),
-    ...mapActions('user', ['logout']),
-    profile: function () {
+    profile() {
       this.$router.push({ name: 'profile' })
     },
   },

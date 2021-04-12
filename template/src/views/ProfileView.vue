@@ -4,7 +4,7 @@
       <h1>{{ $t('profile') }}</h1>
     </b-container>
     <b-container size="m">
-      <profile-password />
+      <auth-password />
     </b-container>
     <b-container size="m">
       <h2>{{ $t('themes') }}</h2>
@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import ProfilePassword from './../components/profile/Password'
+import AuthPassword from './../components/auth/Password'
 
 export default {
   name: 'profile-view',
   components: {
-    ProfilePassword
+    AuthPassword
   },
   head: {
     title: 'Profile'

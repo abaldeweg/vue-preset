@@ -1,12 +1,19 @@
 <template>
   <b-app id="app">
-    <heading />
-    <navigation />
+    <heading
+      :isAuthenticated="state.isAuthenticated"
+      @loggedout="onLoggedOut()"
+    />
+    <navigation
+      :isAuthenticated="state.isAuthenticated"
+      @loggedout="onLoggedOut()"
+    />
+
     <b-content>
-      <router-view v-if="isAuthenticated" />
-      <b-container size="s" v-if="!isAuthenticated">
+      <router-view v-if="state.isAuthenticated" />
+      <b-container size="s" v-if="!state.isAuthenticated">
         <h1>{{ $t('login') }}</h1>
-        <profile-login />
+        <auth-login @loggedin="session" />
       </b-container>
     </b-content>
 
@@ -18,7 +25,7 @@
         :undo="notification.undo"
         hidable
       >
-        {{ $t(notification.msg) }}
+        {{ notification.msg }}
       </b-notification>
     </b-notification-bar>
   </b-app>
@@ -27,15 +34,15 @@
 <script>
 import Heading from './components/Heading'
 import Navigation from './components/Navigation'
-import ProfileLogin from './components/profile/Login'
-import { mapState } from 'vuex'
+import AuthLogin from './components/auth/Login'
+import useAuth from '@/composables/useAuth'
 
 export default {
   name: 'app',
   components: {
     Heading,
     Navigation,
-    ProfileLogin,
+    AuthLogin,
   },
   head: {
     title: 'Home',
@@ -46,13 +53,17 @@ export default {
       notifications: this.$notify.list(),
     }
   },
-  computed: {
-    ...mapState('user', ['isAuthenticated']),
+  setup(props, { emit }) {
+    const { state, check, session } = useAuth(emit)
+    check()
+
+    return { state, session }
   },
-  mounted: function () {
-    this.$store.dispatch('user/check')
-    this.$i18n.locale =
-      window.localStorage.getItem('locale') || process.env.VUE_APP_I18N_LOCALE
+  methods: {
+    onLoggedOut() {
+      this.$store.commit('showOffCanvas', false)
+      this.session()
+    },
   },
 }
 </script>
