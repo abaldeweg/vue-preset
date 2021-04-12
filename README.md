@@ -1,6 +1,6 @@
 # baldeweg/vue-preset
 
-Preset for baldeweg/components and VueJS.
+Preset for @baldeweg/components and VueJS.
 
 ## Getting Started
 
