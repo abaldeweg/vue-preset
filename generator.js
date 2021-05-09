@@ -30,4 +30,5 @@ module.exports = (api, options) => {
   api.exitLog('Make `bin/setup` executable.', 'info')
   api.exitLog('Initialize a new git repo. Review and commit the files.', 'info')
   api.exitLog('Find out more about OpenSource licenses at https://opensource.org/licenses .', 'info')
+  api.exitLog('Install the VueJS Composition API https://www.npmjs.com/package/@vue/composition-api .', 'info')
 }
