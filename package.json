@@ -1,6 +1,6 @@
 {
   "name": "@baldeweg/vue-preset",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Preset for @baldeweg/components and VueJS.",
   "repository": "git@github.com:abaldeweg/vue-preset.git",
   "author": "André Baldeweg <a@baldeweg.org>",
