@@ -7,5 +7,5 @@ Preset for @baldeweg/components and VueJS.
 The Vue CLI module must be installed. <https://cli.vuejs.org/guide/installation.html>
 
 ```shell
-vue create -p abaldeweg/vue-preset NAME
+vue create --preset abaldeweg/vue-preset NAME
 ```

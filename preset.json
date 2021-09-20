@@ -2,11 +2,11 @@
   "useConfigFiles": true,
   "plugins": {
     "@vue/cli-plugin-babel": {},
+    "@vue/cli-plugin-e2e-cypress": {},
     "@vue/cli-plugin-pwa": {},
     "@vue/cli-plugin-router": {
       "historyMode": true
     },
-    "@vue/cli-plugin-vuex": {},
     "@vue/cli-plugin-eslint": {
       "config": "prettier",
       "lintOn": [
@@ -19,19 +19,24 @@
       "fallbackLocale": "en-US",
       "localeDir": "locales",
       "enableInSFC": false
+    },
+    "@baldeweg/vue-cli-plugin-components": {
+      "prompts": true
     }
   },
   "configs": {
     "vue": {
-      "devServer": {
-        "open": true
-      },
       "pwa": {
         "workboxOptions": {
           "importWorkboxFrom": "local"
         },
         "name": "test",
         "themeColor": "#ff0000"
+      },
+      "pluginOptions": {
+        "baldeweg": {
+          "title": "test"
+        }
       }
     },
     "eslintConfig": {
