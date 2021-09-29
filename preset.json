@@ -34,7 +34,7 @@
         "themeColor": "#ff0000"
       },
       "pluginOptions": {
-        "baldeweg": {
+        "components": {
           "title": "test",
           "needsAuth": true
         }
